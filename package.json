@@ -1,0 +1,23 @@
+{
+  "name": "pouchdb-services",
+  "version": "1.0.0",
+  "description": "A set of PouchDB service functions and a class version of them, with `mongodb` style `ObjectID` id's for all your documents.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "pouchdb",
+    "helper",
+    "service"
+  ],
+  "author": "DEEJ4Y",
+  "license": "ISC",
+  "dependencies": {
+    "bson-objectid": "^2.0.4",
+    "pouchdb": "^8.0.0"
+  },
+  "devDependencies": {
+    "@types/pouchdb": "^6.4.0"
+  }
+}
