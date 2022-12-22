@@ -1,6 +1,6 @@
 {
   "name": "pouchdb-services",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A set of PouchDB service functions and a class version of them, with `mongodb` style `ObjectID` id's for all your documents.",
   "main": "index.js",
   "types": "index.d.ts",
