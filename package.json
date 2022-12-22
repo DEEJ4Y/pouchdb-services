@@ -3,8 +3,13 @@
   "version": "1.0.1",
   "description": "A set of PouchDB service functions and a class version of them, with `mongodb` style `ObjectID` id's for all your documents.",
   "main": "index.js",
+  "types": "index.d.ts",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon src/example.ts",
+    "build": "npx tsc",
+    "generate-types": "npx tsc --declaration --allowJs --emitDeclarationOnly",
+    "build-with-types": "npm run generate-types && npm run build"
   },
   "keywords": [
     "pouchdb",
@@ -18,7 +23,10 @@
     "pouchdb": "^8.0.0"
   },
   "devDependencies": {
-    "@types/pouchdb": "^6.4.0"
+    "@tsconfig/node16": "^1.0.3",
+    "@types/pouchdb": "^6.4.0",
+    "nodemon": "^2.0.20",
+    "typescript": "^4.9.4"
   },
   "repository": "https://github.com/DEEJ4Y/pouchdb-services.git"
 }
