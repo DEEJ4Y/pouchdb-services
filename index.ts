@@ -177,7 +177,7 @@ export class PouchDBService {
    * @returns An object with creation status
    */
   create = async (doc: PouchDB.Core.Document<any>) => {
-    if (this.db !== null) await create(this.db, doc);
+    if (this.db !== null) return await create(this.db, doc);
   };
 
   /**
@@ -188,7 +188,7 @@ export class PouchDBService {
    * @returns The matching document
    */
   findById = async (id: string) => {
-    if (this.db !== null) await findById(this.db, id);
+    if (this.db !== null) return await findById(this.db, id);
   };
 
   /**
@@ -200,7 +200,7 @@ export class PouchDBService {
    * @returns An object with updation status
    */
   findByIdAndUpdate = async (id: string, doc: PouchDB.Core.Document<any>) => {
-    if (this.db !== null) await findByIdAndUpdate(this.db, id, doc);
+    if (this.db !== null) return await findByIdAndUpdate(this.db, id, doc);
   };
 
   /**
@@ -211,7 +211,7 @@ export class PouchDBService {
    * @returns An object with deletion status
    */
   findByIdAndDelete = async (id: string) => {
-    if (this.db !== null) await findByIdAndDelete(this.db, id);
+    if (this.db !== null) return await findByIdAndDelete(this.db, id);
   };
 
   /**
@@ -220,6 +220,6 @@ export class PouchDBService {
    * @returns An array of objects
    */
   getAllDocuments = async () => {
-    if (this.db !== null) await getAllDocuments(this.db);
+    if (this.db !== null) return await getAllDocuments(this.db);
   };
 }

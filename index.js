@@ -165,7 +165,7 @@ class PouchDBService {
          */
         this.create = async (doc) => {
             if (this.db !== null)
-                await (0, exports.create)(this.db, doc);
+                return await (0, exports.create)(this.db, doc);
         };
         /**
          * Function to find a document by it's ID.
@@ -176,7 +176,7 @@ class PouchDBService {
          */
         this.findById = async (id) => {
             if (this.db !== null)
-                await (0, exports.findById)(this.db, id);
+                return await (0, exports.findById)(this.db, id);
         };
         /**
          * Function to find a document by it's ID and update it.
@@ -188,7 +188,7 @@ class PouchDBService {
          */
         this.findByIdAndUpdate = async (id, doc) => {
             if (this.db !== null)
-                await (0, exports.findByIdAndUpdate)(this.db, id, doc);
+                return await (0, exports.findByIdAndUpdate)(this.db, id, doc);
         };
         /**
          * Function to find a document by it's ID and delete it.
@@ -199,7 +199,7 @@ class PouchDBService {
          */
         this.findByIdAndDelete = async (id) => {
             if (this.db !== null)
-                await (0, exports.findByIdAndDelete)(this.db, id);
+                return await (0, exports.findByIdAndDelete)(this.db, id);
         };
         /**
          * Function to fetch all the documents in the database.
@@ -208,7 +208,7 @@ class PouchDBService {
          */
         this.getAllDocuments = async () => {
             if (this.db !== null)
-                await (0, exports.getAllDocuments)(this.db);
+                return await (0, exports.getAllDocuments)(this.db);
         };
         if (!dbPath)
             throw new Error("dbPath not specified.");

@@ -78,7 +78,7 @@ export declare class PouchDBService {
      *
      * @returns An object with creation status
      */
-    create: (doc: PouchDB.Core.Document<any>) => Promise<void>;
+    create: (doc: PouchDB.Core.Document<any>) => Promise<PouchDB.Core.Response | null | undefined>;
     /**
      * Function to find a document by it's ID.
      *
@@ -86,7 +86,7 @@ export declare class PouchDBService {
      *
      * @returns The matching document
      */
-    findById: (id: string) => Promise<void>;
+    findById: (id: string) => Promise<(PouchDB.Core.IdMeta & PouchDB.Core.GetMeta) | null | undefined>;
     /**
      * Function to find a document by it's ID and update it.
      *
@@ -95,7 +95,7 @@ export declare class PouchDBService {
      *
      * @returns An object with updation status
      */
-    findByIdAndUpdate: (id: string, doc: PouchDB.Core.Document<any>) => Promise<void>;
+    findByIdAndUpdate: (id: string, doc: PouchDB.Core.Document<any>) => Promise<PouchDB.Core.Response | null | undefined>;
     /**
      * Function to find a document by it's ID and delete it.
      *
@@ -103,11 +103,17 @@ export declare class PouchDBService {
      *
      * @returns An object with deletion status
      */
-    findByIdAndDelete: (id: string) => Promise<void>;
+    findByIdAndDelete: (id: string) => Promise<PouchDB.Core.Response | null | undefined>;
     /**
      * Function to fetch all the documents in the database.
      *
      * @returns An array of objects
      */
-    getAllDocuments: () => Promise<void>;
+    getAllDocuments: () => Promise<{
+        id: string;
+        _conflicts?: string[] | undefined;
+        _attachments?: PouchDB.Core.Attachments | undefined;
+        _id?: string | undefined;
+        _rev?: string | undefined;
+    }[] | null | undefined>;
 }
